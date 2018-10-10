@@ -1,6 +1,5 @@
 {
   "_from": "string-multiple-replace",
-  "_id": "string-multiple-replace@0.1.6",
   "_inBundle": false,
   "_integrity": "sha512-7QU7AcTk3w2E0KYnf3zE40iyzGdarIff7B20jcmxzZ5ZEmN5IYmp2ZodvgzI+2iT+Gl0/Hw0r4JoyASkQpocEw==",
   "_location": "/string-multiple-replace",
@@ -23,12 +22,13 @@
   "_shasum": "031e337229f2249c7c0a555e4668555eb7462ec4",
   "_spec": "string-multiple-replace",
   "_where": "C:\\Users\\Administrator\\Desktop\\stringReplacer",
-  "author": {
-    "name": "Chengbo"
-  },
+  "author": "Chengbo",
   "bundleDependencies": false,
   "deprecated": false,
   "description": "Replace multiple substrings in a string in turn",
+  "devDependencies": {
+    "chai": "^4.2.0"
+  },
   "keywords": [
     "replace",
     "string",
@@ -44,5 +44,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.1.6"
+  "version": "1.0.1",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiechengbo/string-multiple-replace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiechengbo/string-multiple-replace/issues"
+  },
+  "homepage": "https://github.com/xiechengbo/string-multiple-replace#readme"
 }
