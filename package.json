@@ -4,7 +4,8 @@
   "description": "Replace multiple substrings in a string in turn",
   "author": "iChengbo",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-with-coverage": "nyc --reporter=text mocha"
   },
   "main": "index.js",
   "directories": {
@@ -13,7 +14,8 @@
   },
   "devDependencies": {
     "chai": "^4.3.4",
-    "mocha": "^9.1.3"
+    "mocha": "^9.1.3",
+    "nyc": "^15.1.0"
   },
   "keywords": [
     "replace",
