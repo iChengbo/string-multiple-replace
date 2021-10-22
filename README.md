@@ -1,6 +1,10 @@
 # string-multiple-replace
+
 > Replace multiple substrings in a string in turn.
 
+[![LICENSE](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+[![npm-version](https://img.shields.io/npm/v/string-multiple-replace)](https://www.npmjs.com/package/string-multiple-replace)
+[![npm](https://img.shields.io/npm/dm/string-multiple-replace.svg)](https://www.npmjs.com/package/string-multiple-replace)
 
 Replace all substring matches in a string with an mapping object that is table of `replaceThis: withThis`, and you can provide a `sequencer` to decide the order of replacement.
 
