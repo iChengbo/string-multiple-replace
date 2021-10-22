@@ -1,5 +1,3 @@
-
-
 # string-multiple-replace
 > Replace multiple substrings in a string in turn.
 

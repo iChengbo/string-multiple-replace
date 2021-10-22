@@ -1,33 +1,19 @@
 {
-  "_from": "string-multiple-replace",
-  "_inBundle": false,
-  "_integrity": "sha512-7QU7AcTk3w2E0KYnf3zE40iyzGdarIff7B20jcmxzZ5ZEmN5IYmp2ZodvgzI+2iT+Gl0/Hw0r4JoyASkQpocEw==",
-  "_location": "/string-multiple-replace",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "string-multiple-replace",
-    "name": "string-multiple-replace",
-    "escapedName": "string-multiple-replace",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/string-multiple-replace/-/string-multiple-replace-0.1.6.tgz",
-  "_shasum": "031e337229f2249c7c0a555e4668555eb7462ec4",
-  "_spec": "string-multiple-replace",
-  "_where": "C:\\Users\\Administrator\\Desktop\\stringReplacer",
-  "author": "Chengbo",
-  "bundleDependencies": false,
-  "deprecated": false,
+  "name": "string-multiple-replace",
+  "version": "1.0.2",
   "description": "Replace multiple substrings in a string in turn",
+  "author": "iChengbo",
+  "scripts": {
+    "test": "mocha"
+  },
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "devDependencies": {
-    "chai": "^4.2.0"
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
   },
   "keywords": [
     "replace",
@@ -38,23 +24,13 @@
     "match",
     "replacer"
   ],
-  "license": "ISC",
-  "main": "index.js",
-  "name": "string-multiple-replace",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "1.0.1",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xiechengbo/string-multiple-replace.git"
+    "url": "git+https://github.com/iChengbo/string-multiple-replace.git"
   },
   "bugs": {
-    "url": "https://github.com/xiechengbo/string-multiple-replace/issues"
+    "url": "https://github.com/iChengbo/string-multiple-replace/issues"
   },
-  "homepage": "https://github.com/xiechengbo/string-multiple-replace#readme"
+  "homepage": "https://github.com/iChengbo/string-multiple-replace#readme"
 }
