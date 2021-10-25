@@ -41,7 +41,7 @@ function multiReplace(input, matcherObj, sequencer) {
     if (typeof matcherObj !== 'object') {
         throw new TypeError('Expected matcherObj to be a object, got ' + typeof matcherObj);
     } else {
-        if (Object.keys(matcherObj).length = 0) {
+        if (Object.keys(matcherObj).length === 0) {
             return input;
         }
     }
