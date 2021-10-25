@@ -77,21 +77,26 @@ The original string is replaced in turn according to the `matcherObj`, where `se
 
 #### input
 
-Type: `string`   
+Type: `string`
+
 *Required*
 
 > A string to be processed.
 
 #### matcherObj
-Type: `object`  
+
+Type: `object`
+
 *Required*
 
 > An object that represents a string replacement mapping.
 
 #### sequencer
 
-Type: `function`, `array`  
-*Required* 
-*Default: u*
+Type: `function`, `array`
+
+*Required：false*
+
 A `function` that takes the keys of `matcherObj`, and return an suquence array.
+
 >Upgrade Instruction: the existence state of `sequencer` determines whether the last operation overwrites the previous operation.
