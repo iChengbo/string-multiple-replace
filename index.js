@@ -1,7 +1,14 @@
+/*
+ * @Author: iChengbo
+ * @Date: 2021-10-25 22:17:32
+ * @LastEditors: iChengbo
+ * @LastEditTime: 2021-10-25 23:09:44
+ * @FilePath: /string-multiple-replace/index.js
+ */
 'use strict';
 /**
  * V1.0.0 Version upgrade instructions:
- * Discarded: 
+ * Discarded: 11
  *  1. @param needCover is no longer necessary.
  *      The existence state of the sequencer determines whether to replace the previous replacement operation in execution.
  */
