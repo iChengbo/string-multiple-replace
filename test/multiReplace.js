@@ -69,7 +69,70 @@ describe('String-multiple-replace', function(){
 		});
 	});
 
+	describe("Some special cases", function() {
+		it('Replace "My firend" with "{"Name":"Tom"}"', function() {
+			var input = 'My friend has a dog. I want a dog too!';
+			var matcherObj = {
+				'My friend': {
+					"Name": "Tom"
+				},
+			}
+			var sequencer = ["My friend"];
+	
+			var resultStr = multiReplace(input, matcherObj, sequencer);;
+			resultStr.should.equal('{"Name":"Tom"} has a dog. I want a dog too!');
+		});
+		it("should return 'input'", function() {
+			var input = 'My friend has a dog. I want a dog too!';
+			var matcherObj = {}
+	
+			var resultStr = multiReplace(input, matcherObj);;
+			resultStr.should.equal('My friend has a dog. I want a dog too!');
+		});
+	});
+
 	describe("Some error scenes", function() {
+		it("should throw a TypeError if number of parameters is not equal to 2 or 3", function() {
+			var badFun = function() {
+				var input = "abcd, abcd, a";
+				return multiReplace(input);
+			}
+			expect(badFun).to.throw("The number of parameters is incorrect.");
+		});
+
+		it("should throw a TypeError if 'input' is not a string type", function() {
+			var badFun = function() {
+				var input = {"Name": "Tom"};
+				var matcherObj = {
+					"Tom": "Bob",
+				}
+				return multiReplace(input, matcherObj);
+			}
+			expect(badFun).to.throw("Expected input to be a string, got object");
+		});
+
+		it("should throw a TypeError if 'matcherObj' is not a object type", function() {
+			var badFun = function() {
+				var input = "abcd, abcd, a";
+				var matcherObj = "a";
+				return multiReplace(input, matcherObj);
+			}
+			expect(badFun).to.throw("Expected matcherObj to be a object, got string");
+		});
+
+		it("should throw a TypeError if 'sequencer' is not a function or array type", function() {
+			var badFun = function() {
+				var input = "abcd, abcd, a";
+				var matcherObj = {
+					"a": "b",
+					"b": "a"
+				}
+				var sequencer = "abc";
+				return multiReplace(input, matcherObj, sequencer);
+			}
+			expect(badFun).to.throw("Expected sequencer to be a callback or array, got [object String]");
+		});
+
 		it("should throw a TypeError if 'sequencer' does not return a subset of Object.keys(matcherObj)", function() {
 			var badFun = function() {
 				var input = "abcd, abcd, a";
