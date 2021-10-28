@@ -1,17 +1,4 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-10-25 22:17:32
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-10-25 23:09:44
- * @FilePath: /string-multiple-replace/index.js
- */
 'use strict';
-/**
- * V1.0.0 Version upgrade instructions:
- * Discarded: 11
- *  1. @param needCover is no longer necessary.
- *      The existence state of the sequencer determines whether to replace the previous replacement operation in execution.
- */
 
 var replaceWithCover = require('./lib/replaceWithCover');
 var replaceWithoutCover = require('./lib/replaceWithoutCover');
@@ -19,21 +6,13 @@ var replaceWithoutCover = require('./lib/replaceWithoutCover');
 var toString = Object.prototype.toString;
 
 function isSubArray(arr, subArr) {
-    arr = arr.slice();
-    for(var i=0, len=subArr.length; i<len; i++){
-      if(arr.indexOf(subArr[i]) === -1){
-         return false;
-      }else{
-        arr.splice(arr.indexOf(subArr[i]),1);
-      }
-    }
-    return true;
+    return subArr.every(s => arr.includes(s));
 }
 
 /**
- * @param {String} input A string to be processed.
- * @param {Object} matcherObj An object that represents a string replacement mapping.
- * @param {array} sequencer A `function` that takes the keys of `mapperObj`, and return an suquence array.
+ * @param {String}           input       A string to be processed.
+ * @param {Object}           matcherObj  An object that represents a string replacement mapping.
+ * @param {Array|Function}   sequencer   A `function` that takes the keys of `matcherObj`, and return an suquence array.
  */
 function multiReplace(input, matcherObj, sequencer) {
     var argsLength = arguments.length;
@@ -62,7 +41,7 @@ function multiReplace(input, matcherObj, sequencer) {
         } else {
             throw new TypeError('Expected sequencer to be a callback or array, got ' + toString.call(sequencer));
         }
-    
+
         if(!isSubArray(Object.keys(matcherObj), sequence)) {
             throw new TypeError('Expected sequence is the subset of Object.keys(matcherObj), got: ' + sequence);
         }
