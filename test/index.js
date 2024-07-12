@@ -1,8 +1,8 @@
-const should = require('chai').should();
-const expect = require('chai').expect;
-const multiReplace = require('../index');
+import { expect } from 'chai';
+// import { default as multiReplace } from '../dist/index.esm.js'
+import multiReplace from '../src/index.js'
 
-describe('String-multiple-replace', function () {
+describe('String-Multiple-Replace', function () {
 
     describe("need cover previous replacement", function () {
         it('Replace brave & trouble from a text with cowardly & escape, and sequencer is a array that decide the order of replacement.', function () {
@@ -13,8 +13,8 @@ describe('String-multiple-replace', function () {
             }
             const sequencer = ["brave", "trouble"];
 
-            const resultStr = multiReplace(input, matcherObj, sequencer);;
-            resultStr.should.equal("I'm only cowardly when I have to be. Being cowardly doesn't mean you go looking for escape.");
+            const resultStr = multiReplace(input, matcherObj, sequencer);
+            expect(resultStr).to.equal("I'm only cowardly when I have to be. Being cowardly doesn't mean you go looking for escape.");
         });
 
         it('Replace brave & trouble from a text with cowardly & escape, and sequencer is a function that will return a array', function () {
@@ -27,7 +27,7 @@ describe('String-multiple-replace', function () {
             const resultStr = multiReplace(input, matcherObj, function (keys) {
                 return keys; //or keys.sort(callback)
             });
-            resultStr.should.equal("I'm only cowardly when I have to be. Being cowardly doesn't mean you go looking for escape.");
+            expect(resultStr).to.equal("I'm only cowardly when I have to be. Being cowardly doesn't mean you go looking for escape.");
         });
 
         it("Replace 'My friend' with 'I', but then 'I' will be overwritten with 'My friend'", function () {
@@ -40,12 +40,12 @@ describe('String-multiple-replace', function () {
             const sequencer = ["My friend", "has", "I"];
 
             const resultStr = multiReplace(input, matcherObj, sequencer);;
-            resultStr.should.equal("My friend have a dog. My friend want a dog too!");
+            expect(resultStr).to.equal("My friend have a dog. My friend want a dog too!");
         });
     });
 
     describe("needn't cover previous replacement", function () {
-        it("Replace 'My firend' with 'I', and then 'I' will not be overwritten with 'My friend'", function () {
+        it("Replace 'My friend' with 'I', and then 'I' will not be overwritten with 'My friend'", function () {
             const input = "My friend has a dog. I want a dog too!";
             const matcherObj = {
                 "My friend": "I",
@@ -54,7 +54,7 @@ describe('String-multiple-replace', function () {
             }
 
             const resultStr = multiReplace(input, matcherObj);;
-            resultStr.should.equal("I have a dog. My friend want a dog too!");
+            expect(resultStr).to.equal("I have a dog. My friend want a dog too!");
         });
 
         it("Replace all 'a' with 'b', and replace all 'b' with 'a'", function () {
@@ -65,12 +65,12 @@ describe('String-multiple-replace', function () {
             }
 
             const resultStr = multiReplace(input, matcherObj);
-            resultStr.should.equal("bacd, bacd, b");
+            expect(resultStr).to.equal("bacd, bacd, b");
         });
     });
 
     describe("Some special cases", function () {
-        it('Replace "My firend" with "{"Name":"Tom"}"', function () {
+        it('Replace "My friend" with "{"Name":"Tom"}"', function () {
             const input = 'My friend has a dog. I want a dog too!';
             const matcherObj = {
                 'My friend': {
@@ -79,15 +79,15 @@ describe('String-multiple-replace', function () {
             }
             const sequencer = ["My friend"];
 
-            const resultStr = multiReplace(input, matcherObj, sequencer);;
-            resultStr.should.equal('{"Name":"Tom"} has a dog. I want a dog too!');
+            const resultStr = multiReplace(input, matcherObj, sequencer);
+            expect(resultStr).to.equal('{"Name":"Tom"} has a dog. I want a dog too!');
         });
         it("should return 'input'", function () {
             const input = 'My friend has a dog. I want a dog too!';
             const matcherObj = {}
 
             const resultStr = multiReplace(input, matcherObj);;
-            resultStr.should.equal('My friend has a dog. I want a dog too!');
+            expect(resultStr).to.equal('My friend has a dog. I want a dog too!');
         });
     });
 

@@ -10,3 +10,7 @@ package-lock.json
 
 # test
 .nyc_output
+.test_output
+
+# build
+dist
