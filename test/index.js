@@ -30,7 +30,7 @@ describe('String-multiple-replace', function () {
             resultStr.should.equal("I'm only cowardly when I have to be. Being cowardly doesn't mean you go looking for escape.");
         });
 
-        it("Replace 'My firend' with 'I', but then 'I' will be overwritten with 'My friend'", function () {
+        it("Replace 'My friend' with 'I', but then 'I' will be overwritten with 'My friend'", function () {
             const input = "My friend has a dog. I want a dog too!";
             const matcherObj = {
                 "My friend": "I",
