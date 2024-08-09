@@ -1,6 +1,6 @@
 # string-multiple-replace
 
-> Replace multiple substrings in a string in turn.
+> Replace multiple substrings in a string sequentially.
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 [![npm-version](https://img.shields.io/npm/v/string-multiple-replace)](https://www.npmjs.com/package/string-multiple-replace)
@@ -71,7 +71,7 @@ multiReplace(input, matcherObj, keys => keys);
 
 ## API
 
-> multiReplace(input, matcherObj[,sequencer])
+> multiReplace(input, matcherObj [,sequencer])
 
 The original string is replaced in turn according to the `matcherObj`, where `sequencer` determines the replacement order, and the existence state of `sequencer` determines whether the last operation overwrites the previous operation.
 
@@ -99,4 +99,4 @@ Type: `function`, `array`
 
 A `function` that takes the keys of `matcherObj`, and return an suquence array.
 
->Upgrade Instruction: the existence state of `sequencer` determines whether the last operation overwrites the previous operation.
+> Upgrade Instruction: the existence state of `sequencer` determines whether the last operation overwrites the previous operation.
